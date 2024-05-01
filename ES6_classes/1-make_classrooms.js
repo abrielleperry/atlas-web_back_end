@@ -1,4 +1,4 @@
-import ClassRoom from './__tests__/0-classroom.js'; // imports class ClassRoom from 0 file
+import ClassRoom from './0-classroom'; // imports class ClassRoom from 0 file
 
 function initializeRooms() { // declares func InitialzeRoom initializes empty array named rooms
   const rooms = []; // array used to store instances of ClassRoom

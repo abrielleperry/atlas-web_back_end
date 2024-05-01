@@ -1,1 +1,4 @@
 import ClassRoom from './0-classroom.js';
+
+funtion initializeRooms() {
+}

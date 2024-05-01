@@ -1,3 +1,3 @@
-class ClassRoom {
+export default class ClassRoom {
 
 }

@@ -1,1 +1,3 @@
-class HolbertonCourse
+class HolbertonCourse (name, length, students) {
+
+}

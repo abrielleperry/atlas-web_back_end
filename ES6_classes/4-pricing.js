@@ -5,7 +5,7 @@ class Pricing {
     if (typeof amount !== 'number') {
       throw new TypeError('Amount must be a string');
     }
-    if (typeof currency !== 'currency') {
+    if (typeof currency !== 'string') {
       throw new TypeError('Currency must be a string');
     }
     this._amount = amount;

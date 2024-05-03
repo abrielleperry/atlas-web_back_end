@@ -23,7 +23,7 @@ const student4 = new StudentHolberton('Donald', 'Bush', class2019);
 const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
 export class StudentHolberton {
-  constructor(firstName, lastName) {
+  constructor(firstName, lastName, holbertonClass) {
     this._firstName = firstName;
     this._lastName = lastName;
     this._holbertonClass = holbertonClass;

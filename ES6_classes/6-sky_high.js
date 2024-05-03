@@ -1,8 +1,8 @@
 import Building from './5-building';
 
-class SkyHighBuilding extends Building {
+class SkyHighBuilding extends Building { // declares new class SkyHighBuilding that extends Building
   constructor(sqft, floors) {
-    super(sqft);
+    super(sqft); // calls constructor of parent class Building
     this._floors = floors;
   }
 
@@ -10,7 +10,7 @@ class SkyHighBuilding extends Building {
     return this._sqft;
   }
 
-  get floors() {
+  get floors() { // allows external code to access the value of the _floors property
     return this._floors;
   }
 

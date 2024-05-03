@@ -4,7 +4,8 @@ class Building {
     if (this.constructor === Building) {
     }
 
-    if (this.constructor !== Building && this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+    if (this.constructor !== Building
+      && this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
       throw new Error('Class extending Building must override evacuationWarningMessage');
     }
   }
@@ -13,7 +14,7 @@ class Building {
     return this._sqft;
   }
 
-  evacuationWarningMessage() {
+  static evacuationWarningMessage() {
     throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }

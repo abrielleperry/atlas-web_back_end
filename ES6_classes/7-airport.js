@@ -1,11 +1,17 @@
+import util from 'util';
+
 class Airport {
   constructor(name, code) {
-    this._name = name; // 'this' automatically refers to the new object instance
+    this._name = name;
     this._code = code;
   }
 
+  [util.inspect.custom]() {
+    return `Airport [${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
+  }
+
   toString() {
-    return `${this._name} (${this._code})`;
+    return `[object ${this._code}]`;
   }
 }
 

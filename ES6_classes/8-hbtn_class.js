@@ -4,3 +4,4 @@ class HolbertonClass {
     this._location = location;
   }
 }
+export default HolbertonClass;

@@ -1,4 +1,4 @@
-function updateStudentGradeByCity {
+function updateStudentGradeByCity(students, city, newGrades) {
 
 }
 

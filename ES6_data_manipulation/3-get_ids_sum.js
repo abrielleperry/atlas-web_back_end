@@ -1,4 +1,4 @@
-function getStudentIdsSum {
+function getStudentIdsSum(students) {
 
 }
 

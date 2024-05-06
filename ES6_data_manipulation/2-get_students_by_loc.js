@@ -1,4 +1,4 @@
-function getStudentsByLocation {
+function getStudentsByLocation(students, city) {
 
 }
 

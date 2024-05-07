@@ -1,4 +1,4 @@
-function guardrail {
+function getResponseFromAPI() {
 
 }
-export default guardrail;
+export default getResponseFromAPI;

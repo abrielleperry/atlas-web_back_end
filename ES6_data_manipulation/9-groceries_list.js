@@ -7,4 +7,5 @@ function groceriesList() {
     ['Banana', 5],
   ]);
 }
+
 export default groceriesList;

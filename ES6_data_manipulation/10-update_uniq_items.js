@@ -1,12 +1,12 @@
-function updateUniqueItems(items) {
-  if (!(items instanceof Map)) {
+function updateUniqueItems(itemsMap) {
+  if (!(itemsMap instanceof Map)) {
     throw Error('Cannot process');
   }
-  items.forEach((quantity, item) => {
+  itemsMap.forEach((quantity, item) => {
     if (quantity === 1) {
-      items.set(item, 100);
+      itemsMap.set(item, 100);
     }
   });
-  return items;
+  return itemsMap;
 }
 export default updateUniqueItems;

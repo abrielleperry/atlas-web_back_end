@@ -1,4 +1,5 @@
 function cleanSet(set, startString) {
+  if (typeof startString !== 'string') return '';
   if (startString === '') return '';
 
   let result = ''; // initialize empty string to store result

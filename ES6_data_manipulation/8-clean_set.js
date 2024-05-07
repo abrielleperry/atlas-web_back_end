@@ -1,4 +1,4 @@
-function cleanSet {
+function cleanSet(set, startString) {
 
 }
 export default cleanSet;

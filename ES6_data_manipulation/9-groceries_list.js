@@ -1,4 +1,4 @@
-function groceriesList {
+function groceriesList(name, quantity) {
 
 }
 export default groceriesList;

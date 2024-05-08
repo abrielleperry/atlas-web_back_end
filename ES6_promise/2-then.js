@@ -1,7 +1,7 @@
 // func takes promise as arg
 function handleResponseFromAPI(promise) {
   // return new promise obj
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     // arrach then method to promise passed as arg
     promise
       .then(() => {

@@ -14,8 +14,8 @@ function handleResponseFromAPI(promise) {
       })
       // attach catch method to handle errors during promise execution
       .catch(() => {
-        // reject promise with new Error obj
-        reject(new Error());
+        // resolve promise with new Error obj instead of rejecting
+        resolve(new Error());
       });
   });
 }

@@ -8,7 +8,7 @@ function handleProfileSignup() {
     createUser(user),
   ])
     .then(([photoResult, userResult]) => {
-      console.log(photoResult, userResult.firstName, userResult.lastName);
+      console.log(`${photoResult} ${userResult.firstName} ${userResult.lastName}`);
     })
     .catch(() => {
       console.log('Signup system offline');

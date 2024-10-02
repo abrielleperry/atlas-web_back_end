@@ -1,0 +1,13 @@
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] MongoDB starting : pid=63514 port=27017 dbpath=/data/db 64-bit host=455e9c056d27
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] db version v3.6.8
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] git version: 8e540c0b6db93ce994cc548f000900bdc740f80a
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.1f  31 Mar 2020
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] modules: none
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] build environment:
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten]     distarch: aarch64
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten]     target_arch: aarch64
+2024-10-02T11:06:10.084-0500 I CONTROL  [initandlisten] options: { storage: { dbPath: "/data/db" } }
+2024-10-02T11:06:10.084-0500 I STORAGE  [initandlisten] exception in initAndListen: DBPathInUse: Unable to lock the lock file: /data/db/mongod.lock (Resource temporarily unavailable). Another mongod instance is already running on the /data/db directory, terminating
+2024-10-02T11:06:10.085-0500 I CONTROL  [initandlisten] now exiting
+2024-10-02T11:06:10.085-0500 I CONTROL  [initandlisten] shutting down with code:100

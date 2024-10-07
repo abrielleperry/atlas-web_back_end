@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import pymango
+from pymango import MongoClient
 
 
 def log_stats():

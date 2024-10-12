@@ -1,5 +1,5 @@
 {
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": null,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true
 }

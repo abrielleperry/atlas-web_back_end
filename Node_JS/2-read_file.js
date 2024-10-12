@@ -17,6 +17,8 @@ lines.forEach((line) => {
     }
     students[field].push(firstname);
 })
+const totalStudents = lines.length;
+console.log(`Number of students: ${totalStudents}`)
 
 
 
@@ -25,7 +27,6 @@ lines.forEach((line) => {
         }
     const students = lines.slice(1).map(line => line.split(','));
     const totalStudents = students.length;
-    console.log(`Number of students: ${totalStudents}`)
     }
 Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES
 }

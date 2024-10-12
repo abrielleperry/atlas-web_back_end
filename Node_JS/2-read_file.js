@@ -19,7 +19,10 @@ lines.forEach((line) => {
 })
 const totalStudents = lines.length;
 console.log(`Number of students: ${totalStudents}`)
-
+for (const [field, names] of Object.entries(students)) {
+    console.log(`Number of students in ${field}: ${names.length}. List ${names.join(',')}
+`)
+}
 
 
 
@@ -28,5 +31,4 @@ console.log(`Number of students: ${totalStudents}`)
     const students = lines.slice(1).map(line => line.split(','));
     const totalStudents = students.length;
     }
-Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES
 }

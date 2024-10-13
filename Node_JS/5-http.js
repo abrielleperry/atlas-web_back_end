@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-const path = require('path');
+
 const databaseFile = process.argv[2];
 
 const app = http.createServer((req, res) => {
@@ -11,19 +11,21 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.write('This is the list of our students\n');
-    fs.readFile(databaseFile, 'utf-8', (err, data) => {
+
+    fs.readFile(databaseFile, 'utf8', (err, data) => {
       if (err) {
         res.write('Cannot load the database');
         res.end();
         return;
       }
-      const lines = data.split('\n').filter((line) => line.trim() !== '');
+
+      const lines = data.split('\n').filter((line )=> line.trim() !== '');
       const students = lines.slice(1).map((line) => line.split(','));
 
       res.write(`Number of students: ${students.length}\n`);
       const fields = lines[0].split(',');
-      const studentGroups = students.reduce((acc, student) => {
-        const studentData = student.split(',');
+
+      const studentGroups = students.reduce((acc, studentData) => {
         const field = studentData[fields.indexOf('field')];
         if (!acc[field]) {
           acc[field] = [];
@@ -31,9 +33,11 @@ const app = http.createServer((req, res) => {
         acc[field].push(studentData[fields.indexOf('firstname')]);
         return acc;
       }, {});
+
       for (const [field, names] of Object.entries(studentGroups)) {
         res.write(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`);
       }
+
       res.end();
     });
   } else {

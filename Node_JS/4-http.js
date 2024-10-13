@@ -1,4 +1,4 @@
-var app = require('http');
+const http = require('http');
 
 http.createServer(function (req, res) {
   res.write('Hello Holberton School!');

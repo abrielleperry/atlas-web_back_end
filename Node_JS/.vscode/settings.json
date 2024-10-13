@@ -1,5 +1,5 @@
 {
-  "editor.defaultFormatter": null,
+  "editor.defaultFormatter": "sburg.vscode-javascript-booster",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true
 }

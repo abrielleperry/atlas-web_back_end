@@ -12,6 +12,9 @@ function countStudents(path) {
         reject(new Error('Cannot load the database'));
         return;
       }
+      const students = lines.slice(1).map((line) => line.split(','));
+      const totalStudents = students.length;
+      console.log(`Number of students: ${totalStudents}`);
     });
   });
 }

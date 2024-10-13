@@ -15,6 +15,14 @@ function countStudents(path) {
       const students = lines.slice(1).map((line) => line.split(','));
       const totalStudents = students.length;
       console.log(`Number of students: ${totalStudents}`);
+      const fields = {};
+      students.forEach((student) => {
+        const field = student[3];
+        if (!field[field]) {
+          field[field] = [];
+        }
+        fields[field].push(student[0]);
+      });
     });
   });
 }

@@ -7,6 +7,11 @@ function countStudents(path) {
         reject(new Error('Cannot load the database'));
         return;
       }
+      const lines = data.split('\n').filter((line) => line.trim() !== '');
+      if (lines.length === 0) {
+        reject(new Error('Cannot load the database'));
+        return;
+      }
     });
   });
 }

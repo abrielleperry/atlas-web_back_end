@@ -6,8 +6,11 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.listen(1245, () => {
-  console.log('Server is listening on port 1245');
+app.use((req, res) => {
+  const { path } = req;
+  res.status(404).send(`Cannot GET ${path}`);
 });
+
+app.listen(1245);
 
 module.exports = app;

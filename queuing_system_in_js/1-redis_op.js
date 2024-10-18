@@ -10,3 +10,6 @@ client.on('error', (err) => {
   console.error(`Redis client not connected to the server: ${err.message}`);
 });
 
+function setNewSchool(schoolName, value) {
+  client.set(schoolName, value, redis.print);
+}

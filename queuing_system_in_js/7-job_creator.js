@@ -1,3 +1,4 @@
+import { progress } from 'framer-motion';
 import kue from 'kue';
 
 
@@ -50,3 +51,21 @@ const jobs = [
 
 const queue = kue.createQueue();
 
+jobs.forEach((jobData, index) => {
+  const job = queue.create('push_notification_code_2', jobData)
+  .save((err) => {
+    if (!err) {
+      console.log(`Notification job created: ${job.id}`)
+    }
+  })
+
+  job.on('completed', () => {
+    console.log(`Notification job ${job.id} completed`)
+  })
+  job.on('failed'), (err) => {
+    console.log(`Notification job ${job.id} failed: ${errorMessage}`)
+  }
+  job.on('process', (process) => {
+    console.log(`Notification job ${job.id} ${progress}% complete`)
+  })
+})

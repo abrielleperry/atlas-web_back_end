@@ -1,4 +1,3 @@
-import { progress } from 'framer-motion';
 import kue from 'kue';
 
 
@@ -57,15 +56,17 @@ jobs.forEach((jobData, index) => {
     if (!err) {
       console.log(`Notification job created: ${job.id}`)
     }
-  })
+  });
 
   job.on('completed', () => {
     console.log(`Notification job ${job.id} completed`)
-  })
-  job.on('failed'), (err) => {
-    console.log(`Notification job ${job.id} failed: ${errorMessage}`)
-  }
-  job.on('process', (process) => {
+  });
+
+  job.on('failed', (errorMessage) => {
+    console.log(`Notification job ${job.id} failed: ${errorMessage}`);
+  });
+
+  job.on('progress', (progress) => {
     console.log(`Notification job ${job.id} ${progress}% complete`)
-  })
-})
+  });
+});

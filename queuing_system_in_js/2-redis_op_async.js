@@ -14,14 +14,15 @@ function setNewSchool(schoolName, value) {
   client.set(schoolName, value, redis.print);
 }
 
-function displaySchoolValue(schoolName) {
-  client.get(schoolName, (err, reply) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(reply);
-    }
-  });
+const getAsync = promisify(client.get).bind(client);
+
+async function displaySchoolValue(schoolName) {
+  try {
+    const reply = await getAsync(schoolName);
+    console.log(reply);
+  } catch (err) {
+    console.error(err);
+  };
 }
 
 displaySchoolValue('Holberton');

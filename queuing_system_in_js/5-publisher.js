@@ -10,3 +10,10 @@ client.on('connect', () => {
 client.on('error', (err) => {
   console.error(`Redis client not connected to the server: ${err.message}`);
 });
+
+function publishMessage(message, time) {
+  setTimeout(() => {
+    console.log(`About to send ${message}`);
+    client.publish('holberton school channel', message);
+  }, time);
+}

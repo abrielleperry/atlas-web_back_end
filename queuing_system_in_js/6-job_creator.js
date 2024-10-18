@@ -9,7 +9,7 @@ const jobData = {
 
 const job = queue.create('push_notifcations_code', jobData)
   .save((err) => {
-    if (!err) console.log(`Notifcation job created: ${jov.id}`);
+    if (!err) console.log(`Notification job created: ${job.id}`);
   });
 
 job.on('complete', () => {

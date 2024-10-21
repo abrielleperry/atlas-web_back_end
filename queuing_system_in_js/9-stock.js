@@ -26,3 +26,7 @@ const getCurrentReservedStockById = async (itemId) => {
   const stock = await getAsync(`item.${itemId}`);
   return stock ? parseInt(stock, 10) : null;
 };
+
+app.get('/list_products', (req, res) => {
+  res.json(listProducts);
+});

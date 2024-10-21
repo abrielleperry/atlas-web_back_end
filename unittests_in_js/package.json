@@ -1,0 +1,12 @@
+{
+  "name": "task_0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0-calcul.js",
+  "scripts": {
+    "test": "mocha 0-calcul.test.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}

@@ -13,3 +13,7 @@ const list_products = [
 ];
 
 const getItemById = (id) => list_products.find(product => product.itemId === id);
+
+const client = redis.createClient();
+const getAsync = promisify(client.get).bind(client);
+const setAsync = promisify(client.set).bind(client);

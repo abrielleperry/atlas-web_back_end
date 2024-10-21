@@ -21,3 +21,8 @@ const setAsync = promisify(client.set).bind(client);
 const reserveStockById = async (itemId, stock) => {
   await setAsync(`item.${itemId}`, stock);
 };
+
+const getCurrentReservedStockById = async (itemId) => {
+  const stock = await getAsync(`item.${itemId}`);
+  return stock ? parseInt(stock, 10) : null;
+};

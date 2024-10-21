@@ -30,3 +30,14 @@ const getCurrentReservedStockById = async (itemId) => {
 app.get('/list_products', (req, res) => {
   res.json(listProducts);
 });
+
+app.get('/list_products/:itemId', async (req, res) => {
+  const itemId = parseInt(req.params.itemId, 10);
+  const product = getItemById(itemId);
+
+  if (!product) {
+    return res.json({ status: 'Product not found'});
+  }
+  const currentQuantity = await getCurrentReservedStockById(itemId) || product.initialAvailableQuantity;
+  res.json({ ...product, currentQuantity });
+});

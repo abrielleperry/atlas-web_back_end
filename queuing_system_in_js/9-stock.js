@@ -12,3 +12,4 @@ const list_products = [
   { itemId: 4, itemName: 'Suitcase 1050', price: 550, initialAvailableQuantity: 5 },
 ];
 
+const getItemById = (id) => list_products.find(product => product.itemId === id);

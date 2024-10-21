@@ -9,3 +9,8 @@ describe('createPushNotificationsJobs', () => {
         queue = kue.createQueue();
         queue.testMode.enter();
     });
+
+    afterEach(() => {
+        queue.testMode.clear();
+        queue.testMode.exit();
+    });

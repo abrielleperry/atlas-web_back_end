@@ -2,6 +2,7 @@ import { expect } from 'chai';
 import calculateNumber from './2-calcul_chai.js';
 
 describe('Test suite for calculateNumber function', function () {
+
     describe('SUM operation', function () {
         it('should return 5 when rounding 2.4 and 2.5', function () {
             expect(calculateNumber('SUM', 2.4, 2.5)).to.equal(5);

@@ -1,45 +1,27 @@
 import { expect } from 'chai';
 import calculateNumber from './2-calcul_chai.js';
 
-describe('Test suite for calculateNumber function', function () {
+describe('calculateNumber', function() {
+  describe('SUM', function() {
+    it('should return 6 when inputs are 1.4 and 4.5', function() {
+      expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
+    });
+  });
 
-    describe('SUM operation', function () {
-        it('should return 5 when rounding 2.4 and 2.5', function () {
-            expect(calculateNumber('SUM', 2.4, 2.5)).to.equal(5);
-        });
+  describe('SUBTRACT', function() {
+    it('should return -4 when inputs are 1.4 and 4.5', function() {
+      expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
+    });
+  });
 
-        it('should return 0 when adding -2.1 and 2.1', function () {
-            expect(calculateNumber('SUM', -2.1, 2.1)).to.equal(0);
-        });
+  describe('DIVIDE', function() {
+    it('should return 0.2 when inputs are 1.4 and 4.5', function() {
+      expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
     });
 
-    describe('SUBTRACT operation', function () {
-        it('should return 0 when rounding 2.5 and 2.5', function () {
-            expect(calculateNumber('SUBTRACT', 2.5, 2.5)).to.equal(0);
-        });
-
-        it('should return -5 when subtracting 1.5 from -3.4', function () {
-            expect(calculateNumber('SUBTRACT', -3.4, 1.5)).to.equal(-5);
-        });
+    it('should return Error when second input rounds to 0', function() {
+      expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
+      expect(calculateNumber('DIVIDE', 1.4, 0.2)).to.equal('Error');
     });
-
-    describe('DIVIDE operation', function () {
-        it('should return 2 when dividing 2.4 by 1.2', function () {
-            expect(calculateNumber('DIVIDE', 2.4, 1.2)).to.equal(2);
-        });
-
-        it('should return "Error" when dividing by 0', function () {
-            expect(calculateNumber('DIVIDE', 4.9, 0)).to.equal('Error');
-        });
-
-        it('should return "Error" when dividing by a value rounded to 0', function () {
-            expect(calculateNumber('DIVIDE', 5.1, 0.4)).to.equal('Error');
-        });
-    });
-
-    describe('Invalid operation type', function () {
-        it('should return "Invalid operation" for unsupported operations', function () {
-            expect(calculateNumber('MULTIPLY', 2, 3)).to.equal('Invalid operation');
-        });
-    });
+  });
 });

@@ -9,7 +9,7 @@ describe('sendPaymentRequestToApi', function() {
   let consoleLogSpy;
 
   beforeEach(function() {
-    calculateNumberStub = sinon.stub(Utils, 'calculateNumber').returns(10);
+    calculateNumberStub = sinon.stub(sendPaymentRequestToApi, 'paymentAmount').returns(10);
     consoleLogSpy = sinon.spy(console, 'log');
   });
 

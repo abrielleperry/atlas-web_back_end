@@ -17,4 +17,4 @@ function calculate(type, a, b) {
     }
 }
 
-module.exports = calculate;
+export default calculate;

@@ -1,13 +1,13 @@
 {
   "name": "task_0",
   "version": "1.0.0",
-  "description": "",
-  "main": "0-calcul.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha 0-calcul.test.js"
+    "test": "mocha"
   },
   "devDependencies": {
-    "chai": "^5.1.1",
-    "mocha": "^10.7.3"
+    "chai": "^4.3.4",
+    "mocha": "^9.0.0"
   }
 }

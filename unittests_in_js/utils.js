@@ -1,20 +1,18 @@
-const calculateNumber = (type, a, b) => {
-  const num1 = Math.round(a);
-  const num2 = Math.round(b);
-
-  switch (type) {
-    case 'SUM':
-      return num1 + num2;
-    case 'SUBTRACT':
-      return num1 - num2;
-    case 'DIVIDE':
-      if (num2 === 0) {
+const Utils = {
+  calculateNumber: (type, a, b) => {
+    roundA = Math.round(a);
+    roundB = Math.round(b);
+    if (type === 'SUM') {
+      return roundA + roundB;
+    } else if (type === 'SUBTRACT') {
+      return roundA - roundB;
+    } else if (type === 'DIVIDE') {
+      if (roundB === 0) {
         return 'Error';
       }
-      return num1 / num2;
-    default:
-      throw new Error(`Unknown operation type: ${type}`);
+      return (roundA / roundB);
+    }
   }
-};
+}
 
-module.exports = { calculateNumber };
+module.exports = Utils;

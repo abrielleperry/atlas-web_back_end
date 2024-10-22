@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 const chai = require('chai');
 const expect = chai.expect;
-const sendPaymentRequestToApi = require('./5-payment');
+const sendPaymentRequestToApi = require('./6-payment_token');
 const Utils = require('./utils');
 
 describe('sendPaymentRequestToApi', function() {

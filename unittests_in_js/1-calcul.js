@@ -1,6 +1,6 @@
 function calculate(a, b, type) {
-  const roundedA = Math.round(a);
-  const roundedB = Math.round(b);
+  const roundedA = Math.round(a * 100) / 100;
+  const roundedB = Math.round(b * 100) / 100;
 
   switch (type.toUpperCase()) {
     case 'SUM':

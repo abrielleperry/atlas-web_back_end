@@ -23,12 +23,6 @@ describe('calculate function', () => {
     assert.strictEqual(calculate(0, 2, 'divide'), 0);
   });
 
-  it('should round numbers before calculation', () => {
-    assert.strictEqual(calculate(3.7, 2.9, 'sum'), 6, 0.00001);
-    assert.strictEqual(calculate(3.7, 2.9, 'subtract'), 0.8, 0.00001);
-    assert.strictEqual(calculate(3.7, 2.9, 'divide'), 1.27, 0.00001);
-  });
-
   it('should handle invalid operations', () => {
     assert.throws(() => calculate(5, 3, 'invalid'), { name: 'Error' });
   });

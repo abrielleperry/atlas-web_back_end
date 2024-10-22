@@ -5,23 +5,25 @@ const sendPaymentRequestToApi = require('./5-payment');
 const Utils = require('./utils');
 
 describe('sendPaymentRequestToApi', function() {
-  let calculateNumberStub;
-  let consoleLogSpy;
 
-  beforeEach(function() {
-    calculateNumberStub = sinon.stub(sendPaymentRequestToApi, 'paymentAmount').returns(10);
+  this.beforeEach(function() {
     consoleLogSpy = sinon.spy(console, 'log');
   });
 
-  afterEach(function() {
-    calculateNumberStub.restore();
+  this.afterEach(function() {
     consoleLogSpy.restore();
   });
 
-  it('should call utils.calculateNumber with SUM 200 and 20', function() {
+  it('should log correct total with 200 and 20', function() {
     sendPaymentRequestToApi(200, 20);
-    expect(calculateNumberStub.calledOnce).to.be.true;
-    expect(calculateNumberStub.calledWith('SUM', 200, 20)).to.be.true;
-    expect(consoleLogSpy.lastCall.args[0]).to.equal('The total is: 10');
+    expect(consoleLogSpy.calledOnce).to.be.true;
+    expect(consoleLogSpy.calledWith('The total is: 220')).to.be.true;
+  });
+
+  it('should lof the correct totl and be called once for 20 and 10',
+    function() {
+      sendPaymentRequestToApi(20, 10);
+      expect(consoleLogSpy.calledOnce).to.be.true;
+      expect(consoleLogSpy.calledWith('The total is: 30')).to.be.true;
   });
 });

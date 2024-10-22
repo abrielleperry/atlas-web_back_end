@@ -18,9 +18,10 @@ describe('sendPaymentRequestToApi', function() {
     consoleLogSpy.restore();
   });
 
-  it('should call utils.calulate number with SUM 200 and 20', function() {
+  it('should call utils.calculateNumber with SUM 200 and 20', function() {
     sendPaymentRequestToApi(200, 20);
-    expect(spy.calledOnce).to.be.true;
-    expect(spy.calledWith('SUM', 200, 20)).to.be.true;
+    expect(calculateNumberStub.calledOnce).to.be.true;
+    expect(calculateNumberStub.calledWith('SUM', 200, 20)).to.be.true;
+    expect(consoleLogSpy.lastCall.args[0]).to.equal('The total is: 10');
   });
 });

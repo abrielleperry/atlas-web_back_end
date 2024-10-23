@@ -16,3 +16,28 @@ describe('Index page', () => {
     });
   });
 });
+
+describe('Cart page', () => {
+  describe('GET /cart/:id', () => {
+    it('Correct status code when :id is a number?', (done) => {
+      request('http://localhost:7865/cart/123', (error, response, body) => {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it('Correct status code when :id is NOT a number?', (done) => {
+      request('http://localhost:7865/cart/abc', (error, response, body) => {
+        expect(response.statusCode).to.equal(404);
+        done();
+      });
+    });
+
+    it('Correct response body when :id is a number?', (done) => {
+      request('http://localhost:7865/cart/123', (error, response, body) => {
+        expect(JSON.parse(body)).to.have.property('paymentMethods')
+        done();
+      });
+    });
+  });
+});

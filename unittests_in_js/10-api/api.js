@@ -1,5 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
+
+app.use(bodyParser.json());
 
 app.get('/', (request, response) => {
   response.send('Welcome to the payment system');
@@ -14,23 +18,24 @@ app.get('/cart/:id', (request, response) => {
 });
 
 app.get('/available_payments', (request, response) => {
-  const availablePayments {
+  const availablePayments = {
     payment_methods: {
       credit_cards: true,
       paypal: false
     }
-  }
-  response.json(availablePayments)
+  };
+  response.json(availablePayments);
 });
 
 app.post('/login', (request, response) => {
   const { userName } = request.body;
-  response.send(`Welcome ${userName}`)
-  console.log('API available on localhost port 7865')
+  if (!userName) {
+    return response.status(400).send('Username is required');
+  }
+  response.send(`Welcome ${userName}`);
 });
 
 app.listen(7865, () => {
   console.log('API available on localhost port 7865')
 });
-
 module.exports = app;

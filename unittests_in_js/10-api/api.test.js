@@ -43,28 +43,28 @@ describe('Cart page', () => {
 });
 
 describe('Available Payments', () => {
-  it('Correct respose body', (done) => {
+  it('Correct response body', (done) => {
     request('http://localhost:7865/available_payments', (error, response, body) => {
       const expectedResponse = {
         payment_methods: {
           credit_cards: true,
           paypal: false
         }
-      }
-      expect(JSON.parse(body)).to.deep.equal(export default )
+      };
+      expect(JSON.parse(body)).to.deep.equal(expectedResponse);
       done();
     });
   });
 });
 
 describe('Login endpoint', () => {
-  it('Correct respose message', (done) => {
+  it('Correct response message', (done) => {
     const requestBody = { userName: 'Betty' };
     request.post({
       url: 'http://localhost:7865/login',
-      json: requestBody
+      json: requestBody,
       headers: { 'Content-Type': 'application/json' },
-    }, (error, respose, body) => {
+    }, (error, response, body) => {
       expect(body).to.equal('Welcome Betty');
       done();
     });

@@ -41,3 +41,32 @@ describe('Cart page', () => {
     });
   });
 });
+
+describe('Available Payments', () => {
+  it('Correct respose body', (done) => {
+    request('http://localhost:7865/available_payments', (error, response, body) => {
+      const expectedResponse = {
+        payment_methods: {
+          credit_cards: true,
+          paypal: false
+        }
+      }
+      expect(JSON.parse(body)).to.deep.equal(export default )
+      done();
+    });
+  });
+});
+
+describe('Login endpoint', () => {
+  it('Correct respose message', (done) => {
+    const requestBody = { userName: 'Betty' };
+    request.post({
+      url: 'http://localhost:7865/login',
+      json: requestBody
+      headers: { 'Content-Type': 'application/json' },
+    }, (error, respose, body) => {
+      expect(body).to.equal('Welcome Betty');
+      done();
+    });
+  });
+});

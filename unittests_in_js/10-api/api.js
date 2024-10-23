@@ -23,6 +23,12 @@ app.get('/available_payments', (request, response) => {
   response.json(availablePayments)
 });
 
+app.post('/login', (request, response) => {
+  const { userName } = request.body;
+  response.send(`Welcome ${userName}`)
+  console.log('API available on localhost port 7865')
+});
+
 app.listen(7865, () => {
   console.log('API available on localhost port 7865')
 });

@@ -35,7 +35,7 @@ describe('Cart page', () => {
 
     it('Correct response body when :id is a number?', (done) => {
       request('http://localhost:7865/cart/123', (error, response, body) => {
-        expect(JSON.parse(body)).to.have.property('paymentMethods')
+        expect(body).to.equal('Payment methods for cart 123');
         done();
       });
     });

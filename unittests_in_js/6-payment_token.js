@@ -1,9 +1,12 @@
 const Utils = require('./utils');
 
 function getPaymentTokenFromAPI(success) {
-  paymentAmount = Utils.calculateNumber('SUM', totalAmount, totalShipping);
-  console.log(`The total is: ${paymentAmount}`);
-  return paymentAmount;
-}
+  return new Promise((resolve, reject) => {
+    if (success) {
+      resolve({ data: 'Success response from the API' });
+    } else {
+      }
+    });
+  }
 
-module.exports = sendPaymentRequestToApi;
+module.exports = getPaymentTokenFromAPI;

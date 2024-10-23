@@ -5,25 +5,26 @@ const getPaymentTokenFromAPI = require('./6-payment_token');
 const Utils = require('./utils');
 
 describe('getPaymentTokenFromAPI', function() {
-
-  this.beforeEach(function() {
-    consoleLogSpy = sinon.spy(console, 'log');
+  it('should resolve with successful response when success is true', function(done) {
+    console.log('Starting test for success=true');
+    getPaymentTokenFromAPI(true).then(result => {
+      console.log('Test completed successfully');
+      expect(result.data).to.equal('Successful response from the API');
+      done();
+    }).catch(error => {
+      console.error('Error in success=true test:', error);
+      throw error;
+    });
   });
 
-  this.afterEach(function() {
-    consoleLogSpy.restore();
-  });
-
-  it('should log correct total with 200 and 20', function() {
-    sendPaymentRequestToApi(200, 20);
-    expect(consoleLogSpy.calledOnce).to.be.true;
-    expect(consoleLogSpy.calledWith('The total is: 220')).to.be.true;
-  });
-
-  it('should lof the correct totl and be called once for 20 and 10',
-    function() {
-      sendPaymentRequestToApi(20, 10);
-      expect(consoleLogSpy.calledOnce).to.be.true;
-      expect(consoleLogSpy.calledWith('The total is: 30')).to.be.true;
+  it('should not reject when success is false', function(done) {
+    console.log('Starting test for success=false');
+    getPaymentTokenFromAPI(false).then(() => {
+      console.log('Test completed successfully');
+      done();
+    }).catch(error => {
+      console.error('Unexpected rejection in success=false test:', error);
+      throw new Error('Unexpected rejection');
+    });
   });
 });

@@ -111,7 +111,7 @@ To run JavaScript tests, use a testing framework like Jest or Mocha. For example
 -   **Unittest**: For unit testing in Python.
 
 ## Authors
-Abrielle Perry
-<a href="mailto:abrielleperry22@icloud.com">Email</a>
-[LinkedIn](www.linkedin.com/in/abriellerperry)
-[GitHub](https://github.com/abrielleperry)
+**Abrielle Perry**
+- <a href="mailto:abrielleperry22@icloud.com">Email</a>
+- [LinkedIn](www.linkedin.com/in/abriellerperry)
+- [GitHub](https://github.com/abrielleperry)

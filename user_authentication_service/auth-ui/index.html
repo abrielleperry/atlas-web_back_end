@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Auth Demo</title>
+  </head>
+  <body>
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input name="email" placeholder="Email" /><br />
+      <input name="password" type="password" placeholder="Password" /><br />
+      <button type="submit">Register</button>
+    </form>
+
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input name="email" placeholder="Email" /><br />
+      <input name="password" type="password" /><br />
+      <button type="submit">Login</button>
+    </form>
+
+    <h2>Profile</h2>
+    <button onclick="getProfile()">Fetch Profile</button>
+    <pre id="profileOutput"></pre>
+
+    <script>
+      const BASE_URL = "https://atlas-webbackend-production.up.railway.app";
+
+      document.getElementById("registerForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const res = await fetch(`${BASE_URL}/users`, {
+          method: "POST",
+          body: data,
+        });
+        alert(await res.text());
+      };
+
+      document.getElementById("loginForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const res = await fetch(`${BASE_URL}/sessions`, {
+          method: "POST",
+          body: data,
+          credentials: "include",
+        });
+        alert(await res.text());
+      };
+
+      async function getProfile() {
+        const res = await fetch(`${BASE_URL}/profile`, {
+          credentials: "include",
+        });
+        const json = await res.json();
+        document.getElementById("profileOutput").innerText = JSON.stringify(
+          json,
+          null,
+          2
+        );
+      }
+    </script>
+  </body>
+</html>
